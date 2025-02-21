@@ -1,0 +1,49 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'net.ovonsame'
+version = '1.0'
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'net.ovonsame'
+            artifactId = 'numericboolean'
+            version = '1.0'
+
+            pom {
+                name = 'Numeric Boolean'
+                description = 'A library that converts a number to a boolean.'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'ovonsame'
+                        name = 'Ovonsame'
+                    }
+                }
+            }
+            repositories {
+                maven {
+                    name = "NumericBoolean"
+                    url = uri("https://your-repo.com/maven2/")
+                    credentials {
+                        username = "ovonsame"
+                        password = "46575235865c46t7bt6983t"
+                    }
+                }
+            }
+        }
+    }
+}
