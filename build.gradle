@@ -1,53 +1,15 @@
-plugins {
-    id 'java-library'
-    id 'maven-publish'
-}
+apply plugin: 'java'
+apply plugin: 'maven-publish'
 
 group = 'net.ovonsame'
-version = '1.0'
+version = '2.0'
+
+repositories {
+  mavenCentral()
+}
 
 java {
     withJavadocJar()
     withSourcesJar()
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from components.java
-
-            groupId = 'net.ovonsame'
-            artifactId = 'numericboolean'
-            version = '1.1'
-
-            pom {
-                name = 'Numeric Boolean'
-                description = 'A library that converts a number to a boolean.'
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'ovonsame'
-                        name = 'Ovonsame'
-                    }
-                }
-            }
-        }
-    }
-}
-
-repositories {
-    maven {
-        name = "GitHubPackages"
-        url = uri("https://maven.pkg.github.com/OVNSAME/NumericBoolean")
-
-        credentials {
-            username = "Ovnsame"
-            password = ""
-        }
-    }
-}
