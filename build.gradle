@@ -18,7 +18,7 @@ publishing {
 
             groupId = 'net.ovonsame'
             artifactId = 'numericboolean'
-            version = '1.0'
+            version = '1.1'
 
             pom {
                 name = 'Numeric Boolean'
